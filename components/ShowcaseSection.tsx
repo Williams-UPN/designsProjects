@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 export default function ShowcaseSection() {
   // ————— Datos estáticos —————
   const projectNames = [
@@ -12,36 +10,17 @@ export default function ShowcaseSection() {
     "REMODELACIÓN SEÑORA VANESA VASQUEZ",
   ];
 
-  // Construye la ruta base sin extensión
-  const basePaths = projectNames.map(
-    (name) => `/image/projects/${encodeURIComponent(name)}/PLANOS/1`
-  );
-
-  // Duplicamos para el loop
-  const images = [...basePaths, ...basePaths];
+  // Construye la ruta completa al WebP "1.webp" de cada proyecto
+  const images = projectNames.flatMap((name) => {
+    const base = `/image/projects/${encodeURIComponent(name)}/PLANOS/1.webp`;
+    // duplicamos para el bucle infinito
+    return [base, base];
+  });
   // ——————————————————————
-
-  // Componente que prueba png primero, luego jpg
-  function FallbackImage({ basePath, alt }: { basePath: string; alt: string }) {
-    const [src, setSrc] = useState(`${basePath}.png`);
-    const handleError = () => {
-      if (src.endsWith(".png")) {
-        setSrc(`${basePath}.jpg`);
-      }
-    };
-    return (
-      <img
-        src={src}
-        alt={alt}
-        onError={handleError}
-        className="object-contain w-full h-full"
-      />
-    );
-  }
 
   return (
     <section className="py-12">
-      <div className="container mx-auto px-4 py-6 md:px-35 lg:py-12 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-35 lg:py-12 overflow-hidden">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-[#3EA6D2]">
             NUESTROS PROYECTOS
@@ -49,14 +28,15 @@ export default function ShowcaseSection() {
         </div>
 
         <div className="flex animate-showcase gap-10 w-max mb-12">
-          {images.map((basePath, index) => (
+          {images.map((src, idx) => (
             <div
-              key={index}
+              key={idx}
               className="min-w-[360px] h-[240px] flex items-center justify-center rounded-[2rem] overflow-hidden shadow-lg border border-gray-200 bg-white mx-3"
             >
-              <FallbackImage
-                basePath={basePath}
-                alt={`Showcase image ${index + 1}`}
+              <img
+                src={src}
+                alt={`Proyecto ${idx + 1}`}
+                className="object-contain w-full h-full"
               />
             </div>
           ))}

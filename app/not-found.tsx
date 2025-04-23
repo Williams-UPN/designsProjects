@@ -1,13 +1,24 @@
+// app/not-found.tsx
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "@/public/animations/Animation - 1742507720678.json";
+
+// Cargamos el Player _sólo_ en el cliente
+const Player = dynamic(
+  () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
+  { 
+    ssr: false,
+    loading: () => null,  // opcional: placeholder mientras carga
+  }
+);
 
 export default function NotFoundRoot() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 p-4">
       <div className="space-y-4 sm:space-y-6 md:space-y-2 text-center">
+        {/* Ahora Player sólo se renderiza en el navegador */}
         <Player
           autoplay
           loop

@@ -34,7 +34,7 @@ export default function ContactoPage() {
       <section
         className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center"
         style={{
-          backgroundImage: `url('/image/portadas/portada-contacto.jpg')`,
+          backgroundImage: `url('/image/portadas/3.webp')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

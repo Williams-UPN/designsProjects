@@ -8,30 +8,15 @@ import "swiper/css/pagination";
 interface StaticSlide {
   id: number;
   title: string;
-  description?: string;
   imageUrl: string;
 }
 
 export default function ImageSlider() {
-  // ————— Datos estáticos —————
   const slides: StaticSlide[] = [
-    {
-      id: 1,
-      title: "Slide 1",
-      imageUrl: "/image/slider/1.png",
-    },
-    {
-      id: 2,
-      title: "Nick Design 1",
-      imageUrl: "/image/slider/nick-design-snAHOBkTQyQ-unsplash.jpg",
-    },
-    {
-      id: 3,
-      title: "Nick Design 2",
-      imageUrl: "/image/slider/nick-design-snAHOBkTQyQ-unsplash (1).jpg",
-    },
+    { id: 1, title: "Slide 1", imageUrl: "/image/slider/1.webp" },
+    { id: 2, title: "Nick Design 1", imageUrl: "/image/slider/2.webp" },
+    { id: 3, title: "Nick Design 2", imageUrl: "/image/slider/3.webp" },
   ];
-  // ——————————————————————
 
   return (
     <div className="relative w-full hero-slider mb-16 md:mb-28 overflow-hidden">
