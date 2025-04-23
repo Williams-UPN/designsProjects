@@ -31,7 +31,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+/.env*
 
 # vercel
 .vercel
@@ -40,7 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-
 # Build output
 .next/
 out/
@@ -48,13 +47,9 @@ out/
 # Dependencias
 node_modules/
 
-# Ignora todas las subcarpetas de public/image excepto “projects”
-/public/image/*
-!/public/image/projects/
-/public/image/projects/**
+# —  YA NO IGNORAMOS public/image  —
+# (Todas las imágenes en public/image/ serán rastreadas)
 
 # Archivos de log, OS, editores
 *.log
 .DS_Store
-
-
