@@ -1,6 +1,4 @@
 // app/not-found.tsx
-"use client";
-
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
@@ -11,6 +9,7 @@ const Player = dynamic(
   { ssr: false }
 );
 
+// Importa tus datos JSON directamente; eso no ejecuta nada en servidor
 import animationData from "@/public/animations/Animation - 1742507720678.json";
 
 export default function NotFoundRoot() {
@@ -21,7 +20,7 @@ export default function NotFoundRoot() {
           autoplay
           loop
           src={animationData}
-          className="mx-auto w-64 h-64 sm:w-80 sm:h-80 md:w-140 md:h-120"
+          className="mx-auto w-64 h-64 sm:w-80 sm:h-80 md:w-[140px] md:h-[120px]"
         />
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">
           Oops! Página en construcción
