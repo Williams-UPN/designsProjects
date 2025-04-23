@@ -3,22 +3,20 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import animationData from "@/public/animations/Animation - 1742507720678.json";
 
-// Cargamos el Player _sólo_ en el cliente
+// Cargamos el Player de Lottie sólo en cliente (ssr: false)
 const Player = dynamic(
-  () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
-  { 
-    ssr: false,
-    loading: () => null,  // opcional: placeholder mientras carga
-  }
+  () =>
+    import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
+  { ssr: false }
 );
+
+import animationData from "@/public/animations/Animation - 1742507720678.json";
 
 export default function NotFoundRoot() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 p-4">
       <div className="space-y-4 sm:space-y-6 md:space-y-2 text-center">
-        {/* Ahora Player sólo se renderiza en el navegador */}
         <Player
           autoplay
           loop
