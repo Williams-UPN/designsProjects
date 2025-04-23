@@ -18,7 +18,7 @@ export default async function Page() {
     if (fs.existsSync(planosDir)) {
       files = fs
         .readdirSync(planosDir)
-        .filter((f) => /\.(png|jpe?g)$/.test(f))
+        .filter((f) => /\.(png|jpe?g|webp)$/.test(f))
         .sort();
     }
     const gallery = files.map((f) =>
@@ -27,7 +27,7 @@ export default async function Page() {
     return {
       heading: name,
       subHeading:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae orci euismod, luctus orci non, pretium arcu. Praesent at feugiat nisl, sit amet vulputate orci.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae orci euismod, luctus orci non, pretium arcu.",
       imageUrl: gallery[0] || "/placeholder.jpg",
       gallery,
     };
@@ -35,6 +35,22 @@ export default async function Page() {
 
   return (
     <main>
+      {/* ——— Portada #2 ——— */}
+      <section
+        className="relative w-full h-[300px] sm:h-[400px] flex items-center justify-center"
+        style={{
+          backgroundImage: `url('/image/portadas/2.webp')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-[#3EA6D2]/30" />
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-bold z-10">
+          Nuestros Proyectos
+        </h1>
+      </section>
+
+      {/* Componente que renderiza grid y modal (sin hero) */}
       <ProjectsPage projects={projects} />
     </main>
   );

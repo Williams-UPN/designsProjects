@@ -42,25 +42,11 @@ export default function ProjectsPage({ projects }: ProjectsPageProps) {
   const gallery = current.gallery.length ? current.gallery : [current.imageUrl];
 
   const next = () => setGalleryIndex((i) => (i + 1) % gallery.length);
-  const prev = () => setGalleryIndex((i) => (i - 1 + gallery.length) % gallery.length);
+  const prev = () =>
+    setGalleryIndex((i) => (i - 1 + gallery.length) % gallery.length);
 
   return (
     <>
-      {/* Hero */}
-      <section
-        className="relative w-full h-[400px] sm:h-[500px] flex items-center justify-center"
-        style={{
-          backgroundImage: `url('/image/projects/hero-proyectos.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#3EA6D2]/30" />
-        <h1 className="text-3xl sm:text-4xl md:text-6xl text-white font-bold z-10">
-          Nuestros Proyectos
-        </h1>
-      </section>
-
       {/* Intro */}
       <section className="container mx-auto px-4 md:px-35 py-6 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
@@ -68,7 +54,12 @@ export default function ProjectsPage({ projects }: ProjectsPageProps) {
             Nuestros Proyectos
           </h2>
           <p className="text-gray-500 max-w-xl text-sm md:text-base text-justify leading-relaxed">
-            En Construingenio, cada proyecto es una oportunidad para transformar espacios y mejorar la calidad de vida de nuestros clientes. Aplicamos altos estándares de ingeniería, arquitectura e innovación tecnológica para garantizar resultados funcionales, seguros y estéticamente atractivos. Descubre cómo llevamos a cabo soluciones integrales que marcan la diferencia en cada obra.
+            En Construingenio, cada proyecto es una oportunidad para transformar
+            espacios y mejorar la calidad de vida de nuestros clientes.
+            Aplicamos altos estándares de ingeniería, arquitectura e innovación
+            tecnológica para garantizar resultados funcionales, seguros y
+            estéticamente atractivos. Descubre cómo llevamos a cabo soluciones
+            integrales que marcan la diferencia en cada obra.
           </p>
         </div>
 
@@ -105,17 +96,7 @@ export default function ProjectsPage({ projects }: ProjectsPageProps) {
           onClick={closeModal}
         >
           <div
-            className="
-              bg-white 
-              rounded-lg 
-              shadow-2xl 
-              overflow-hidden 
-              w-[90vw]    /* 90% ancho */
-              h-[90vh]    /* 90% alto */
-              flex 
-              transition-transform 
-              duration-300
-            "
+            className="bg-white rounded-lg shadow-2xl overflow-hidden w-[90vw] h-[90vh] flex transition-transform duration-300"
             onClick={(e) => e.stopPropagation()}
             style={{
               transform: animateModal ? "translateY(0)" : "translateY(-100vh)",
@@ -145,14 +126,7 @@ export default function ProjectsPage({ projects }: ProjectsPageProps) {
                   alt={`${current.heading} ${galleryIndex + 1}`}
                   width={800}
                   height={600}
-                  className="
-                    rounded-md
-                    object-contain
-                    w-auto
-                    h-full
-                    max-w-full  /* limita ancho al 90% */
-                    max-h-full
-                  "
+                  className="rounded-md object-contain max-w-full max-h-full"
                 />
               </div>
               <button

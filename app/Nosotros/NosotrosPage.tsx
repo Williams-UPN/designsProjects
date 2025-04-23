@@ -182,7 +182,7 @@ export default function NosotrosPage() {
       <section
         className="relative w-full h-[500px] flex items-center justify-center"
         style={{
-          backgroundImage: `url('/image/servicios/hero-nosotros.jpg')`,
+          backgroundImage: `url('/image/portadas/1.webp')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
