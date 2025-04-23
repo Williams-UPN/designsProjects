@@ -48,12 +48,13 @@ out/
 # Dependencias
 node_modules/
 
-# Imágenes pesadas
-/public/image/
+# Ignora todas las subcarpetas de public/image excepto “projects”
+/public/image/*
+!/public/image/projects/
+/public/image/projects/**
 
 # Archivos de log, OS, editores
 *.log
 .DS_Store
 
 
-/public/image/
