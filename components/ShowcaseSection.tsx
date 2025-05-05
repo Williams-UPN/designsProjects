@@ -6,13 +6,11 @@ export default function ShowcaseSection() {
     "CASA DE CAMPO- FAMILIA DELGADO",
     "CASA SEÑORA MARITZA",
     "CASA SEÑORA NORMA",
-    "CASA WILLIAN VENTURA",
-    "REMODELACIÓN SEÑORA VANESA VASQUEZ",
   ];
 
   // Construye la ruta completa al WebP "1.webp" de cada proyecto
   const images = projectNames.flatMap((name) => {
-    const base = `/image/projects/${encodeURIComponent(name)}/PLANOS/1.webp`;
+    const base = `/image/projects/${encodeURIComponent(name)}/Plano1.webp`;
     // duplicamos para el bucle infinito
     return [base, base];
   });

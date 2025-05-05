@@ -13,9 +13,9 @@ interface StaticSlide {
 
 export default function ImageSlider() {
   const slides: StaticSlide[] = [
-    { id: 1, title: "Slide 1", imageUrl: "/image/slider/1.webp" },
-    { id: 2, title: "Nick Design 1", imageUrl: "/image/slider/2.webp" },
-    { id: 3, title: "Nick Design 2", imageUrl: "/image/slider/3.webp" },
+    { id: 1, title: "", imageUrl: "/image/slider/Slide1.webp" },
+    { id: 2, title: "", imageUrl: "/image/slider/Slide2.webp" },
+    { id: 3, title: "", imageUrl: "/image/slider/Slide3.webp" },
   ];
 
   return (

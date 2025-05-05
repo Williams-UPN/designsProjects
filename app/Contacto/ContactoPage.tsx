@@ -41,7 +41,7 @@ export default function ContactoPage() {
       >
         <div className="absolute inset-0 bg-[#3EA6D2]/30" />
         <h1 className="text-3xl sm:text-4xl md:text-6xl text-white font-bold z-10">
-          Contacto
+          
         </h1>
       </section>
 
