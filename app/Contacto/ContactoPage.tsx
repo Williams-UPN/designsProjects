@@ -9,6 +9,7 @@ export default function ContactoPage() {
   const phoneNumber = "+51 956 498 610";
   const email = "Construingenio18@gmail.com";
   const address = "Torres Paz 708, Chiclayo, Perú.";
+  const mapUrl = "https://www.google.com/maps/place/Torres+Paz+708,+Chiclayo+14001,+Per%C3%BAn";
   const mapEmbedUrl =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1665.8023061310319!2d-79.83946481133675!3d-6.773760339508596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904cef28567ae461%3A0xfae5cd2e0e823270!2sTorres%20Paz%20708%2C%20Chiclayo%2014001!5e0!3m2!1ses!2spe!4v1743686834202!5m2!1ses!2spe";
 
@@ -30,7 +31,6 @@ export default function ContactoPage() {
 
   return (
     <>
-// Hero estático
       <section
         className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center"
         style={{
@@ -87,7 +87,7 @@ export default function ContactoPage() {
                 </Link>
                 {/* Dirección */}
                 <Link
-                  href={mapEmbedUrl}
+                  href={mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center space-x-3 transition-colors hover:text-[#B4000A]"
@@ -199,7 +199,7 @@ export default function ContactoPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#3EA6D2] text-white py-2 rounded-full text-sm font-semibold hover:bg-[#B4000A] transition-colors duration-300 focus:outline-none"
+                  className="w-full bg-[#B4000A] text-white py-2 rounded-full text-sm font-semibold hover:bg-[#3EA6D2] transition-colors duration-300 focus:outline-none"
                 >
                   ENVIAR
                 </button>

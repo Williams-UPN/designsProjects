@@ -123,19 +123,19 @@ export function FeatureSection() {
   // ——————————————————————
 
   return (
-    <div className="container mx-auto px-4 py-6 md:px-35 lg:py-12">
+    <div className="container mx-auto px-4 lg:px-35 py-6 lg:py-12">
       {/* Título y descripción */}
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center mb-12 gap-0">
-        <h2 className="text-2xl md:text-4xl font-bold text-[#3EA6D2] mb-4 md:mb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center mb-12 gap-6">
+        <h2 className="text-2xl md:text-4xl font-bold text-[#3EA6D2] mb-4 lg:mb-0">
           {title}
         </h2>
-        <p className="text-gray-600 text-sm text-justify leading-relaxed">
+        <p className="text-gray-600 text-sm lg:text-base text-justify leading-relaxed">
           {description}
         </p>
       </div>
 
       {/* Tarjetas */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
         {features.map((f, idx) => (
           <FeatureCard
             key={f.id}
