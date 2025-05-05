@@ -1,26 +1,15 @@
 # netlify.toml
 
-# Configuración de build para Netlify
 [build]
-  # Comando que genera y exporta tu sitio Next.js a HTML estático
-  command   = "npm run build && npm run export"
-  # Carpeta de salida que Netlify publicará
-  publish   = "out"
-  # (Opcional) Si en el futuro agregas funciones de Netlify Functions:
-  # functions = "netlify/functions"
+  # Solo build: la exportación está gestionada por output: 'export' en next.config.js
+  command = "npm run build"
+  # Carpeta resultante con tu sitio estático
+  publish = "out"
 
-# Ejemplo de redirects (no necesario para un sitio estático exportado,
-# pero útil si añades rutas SPA sin archivos físicos)
-# [[redirects]]
-#   from   = "/*"
-#   to     = "/index.html"
-#   status = 200
-
-# Configuración para Netlify Dev (opcional)
 [dev]
-  # Comando para levantar tu servidor de desarrollo local
+  # Levanta tu servidor de desarrollo local
   command = "npm run dev"
-  # Puerto en el que corre tu dev server
+  # Puerto por defecto de Next.js
   port    = 3000
-  # Carpeta que Netlify Dev sirve como estática
+  # Carpeta estática que Netlify Dev servirá
   publish = "out"
